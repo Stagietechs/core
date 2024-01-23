@@ -1066,7 +1066,9 @@ class LightEntity(ToggleEntity, cached_properties=CACHED_PROPERTIES_WITH_ATTR_):
             if color_mode in supported_color_modes:
                 return
             # Increase severity to warning in 2021.6, reject in 2021.10
-            raise ValueError(f"Color mode must be one of {supported_color_modes}")
+            raise ValueError(
+                f"Got color mode {color_mode}, expected one of {supported_color_modes}"
+            )
 
         # When an effect is active, the color mode should indicate what adjustments are
         # supported by the effect. To make this possible, we allow the light to set its
@@ -1080,7 +1082,9 @@ class LightEntity(ToggleEntity, cached_properties=CACHED_PROPERTIES_WITH_ATTR_):
             return
 
         # Increase severity to warning in 2021.6, reject in 2021.10
-        raise ValueError(f"Color mode must be one of {effect_color_modes}")
+        raise ValueError(
+            f"Got color mode {color_mode}, expected one of {effect_color_modes}"
+        )
 
     @final
     @property
