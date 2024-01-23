@@ -1077,7 +1077,7 @@ class LightEntity(ToggleEntity, cached_properties=CACHED_PROPERTIES_WITH_ATTR_):
             # color modes
             if color_mode in supported_color_modes:
                 return
-            # Increase severity to warning in 2024.2, reject in 2025.2
+            # Increase severity to warning in 2021.6, reject in 2021.10
             _LOGGER.debug(
                 "%s: set to unsupported color_mode: %s, supported_color_modes: %s",
                 self.entity_id,
@@ -1097,7 +1097,7 @@ class LightEntity(ToggleEntity, cached_properties=CACHED_PROPERTIES_WITH_ATTR_):
         if color_mode in effect_color_modes:
             return
 
-        # Increase severity to warning in 2024.2, reject in 2025.2
+        # Increase severity to warning in 2021.6, reject in 2021.10
         _LOGGER.debug(
             "%s: set to unsupported color_mode: %s, supported for effect: %s",
             self.entity_id,
